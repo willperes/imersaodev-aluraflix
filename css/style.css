@@ -100,8 +100,6 @@ body .container .movies {
   margin: 1em;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  -ms-flex-line-pack: center;
-      align-content: center;
   overflow: auto;
   -webkit-animation: fadeIn 1s forwards;
           animation: fadeIn 1s forwards;
