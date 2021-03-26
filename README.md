@@ -1,5 +1,7 @@
 # imersaodev-aluraflix
 
+Desafio proposto pelo https://imersao.dev.
+
 ## Resultado
 https://willperes.github.io/imersaodev-aluraflix/
 
