@@ -87,6 +87,18 @@ body .container .header .menu img {
   opacity: 0;
 }
 
+body .container .message p {
+  text-align: center;
+  font-weight: 600;
+  color: red;
+  font-size: 1.5em;
+  -webkit-animation: fadeIn 1s forwards;
+          animation: fadeIn 1s forwards;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+  opacity: 0;
+}
+
 body .container .movies {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -97,14 +109,14 @@ body .container .movies {
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin: 1em;
+  margin: 0em 1em 1em 1em;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   overflow: auto;
   -webkit-animation: fadeIn 1s forwards;
           animation: fadeIn 1s forwards;
-  -webkit-animation-delay: 0.5s;
-          animation-delay: 0.5s;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
   opacity: 0;
 }
 
@@ -114,6 +126,16 @@ body .container .movies img {
   padding-right: 0em;
   margin-bottom: 30px;
   border-radius: 8px;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+  cursor: pointer;
+}
+
+body .container .movies img:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-box-shadow: 3px 5px 13px -4px rgba(0, 0, 0, 0.75);
+          box-shadow: 3px 5px 13px -4px rgba(0, 0, 0, 0.75);
 }
 
 body .container .movies .fadeIn {
@@ -123,6 +145,71 @@ body .container .movies .fadeIn {
   animation-duration: 1s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
+}
+
+body .container .movies .movie {
+  white-space: nowrap;
+}
+
+body .container .popups .popup .overlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+  display: none;
+}
+
+body .container .popups .popup .content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%) scale(0);
+          transform: translateX(-50%) translateY(-50%) scale(0);
+  background: rgba(255, 255, 255, 0.75);
+  width: 600px;
+  z-index: 2;
+  padding: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: none;
+  border-radius: 10px;
+}
+
+body .container .popups .popup .content iframe {
+  margin-top: 50px;
+  border-radius: 10px;
+}
+
+body .container .popups .popup .close-btn {
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 30px;
+  height: 30px;
+  background: #222;
+  color: #fff;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 50%;
+}
+
+body .container .popups .popup.active .overlay {
+  display: block;
+}
+
+body .container .popups .popup.active .content {
+  -webkit-animation: fadeIn 1s forwards;
+          animation: fadeIn 1s forwards;
+  opacity: 0;
+  -webkit-transform: translateX(-50%) translateY(-50%) scale(1);
+          transform: translateX(-50%) translateY(-50%) scale(1);
+  display: block;
 }
 
 @-webkit-keyframes fadeIn {
@@ -141,9 +228,5 @@ body .container .movies .fadeIn {
   100% {
     opacity: 1;
   }
-}
-
-body .container .movies .movie {
-  white-space: nowrap;
 }
 /*# sourceMappingURL=style.css.map */
