@@ -75,15 +75,25 @@ body {
             }
         }
 
+        .message p {
+            text-align: center;
+            font-weight: 600;
+            color: red;
+            font-size: 1.5em;
+            animation: fadeIn 1s forwards;
+            animation-delay: 0.5s;
+            opacity: 0;
+        }
+
         .movies {
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
-            margin: 1.8em 1em 1em 1em;
+            margin: 0em 1em 1em 1em;
             justify-content: space-around;
             overflow: auto;
             animation: fadeIn 1s forwards;
-            animation-delay: 0.5s;
+            animation-delay: 1s;
             opacity: 0;
 
             img {
@@ -110,27 +120,92 @@ body {
                 animation-fill-mode: both;
             }
 
-            @-webkit-keyframes fadeIn {
-                0% {
-                    opacity: 0;
-                }
-                100% {
-                    opacity: 1;
-                }
-            }
-
-            @keyframes fadeIn {
-                0% {
-                    opacity: 0;
-                }
-                100% {
-                    opacity: 1;
-                }
-            }
-
             .movie {
                 white-space: nowrap;
             }
+        }
+
+        .popups {
+            .popup {
+                .overlay {
+                    position: fixed;
+                    top: 0px;
+                    left: 0px;
+                    width: 100vw;
+                    height: 100vh;
+                    background: rgba(0, 0, 0, .7);
+                    z-index: 1;
+                    display: none;
+                }
+
+                .content {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translateX(-50%) translateY(-50%) scale(0);
+                    background: rgba(255, 255, 255, .75);
+                    width: 600px;
+                    z-index: 2;
+                    padding: 20px;
+                    box-sizing: border-box;
+                    display: none;
+                    border-radius: 10px;
+
+                    iframe {
+                        margin-top: 50px;
+                        border-radius: 10px;
+                    }
+                }
+
+                .close-btn {
+                    cursor: pointer;
+                    position: absolute;
+                    right: 20px;
+                    top: 20px;
+                    width: 30px;
+                    height: 30px;
+                    background: #222;
+                    color: #fff;
+                    font-size: 25px;
+                    font-weight: 600;
+                    line-height: 30px;
+                    text-align: center;
+                    border-radius: 50%;
+                }
+            }
+
+            .popup.active {
+                .overlay {
+                    display: block;
+                }
+            }
+
+            .popup.active {
+                .content {
+                    animation: fadeIn 1s forwards;
+                    opacity: 0;
+                    transform: translateX(-50%) translateY(-50%) scale(1);
+                    display: block;
+                }
+            }
+        }
+    }
+
+    @-webkit-keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
         }
     }
 }
