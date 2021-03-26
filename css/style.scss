@@ -79,7 +79,7 @@ body {
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
-            margin: 1em;
+            margin: 1.8em 1em 1em 1em;
             justify-content: space-around;
             overflow: auto;
             animation: fadeIn 1s forwards;
@@ -92,6 +92,13 @@ body {
                 padding-right: 0em;
                 margin-bottom: 30px;
                 border-radius: 8px;
+                transition: .3s ease-in-out;
+                cursor: pointer;
+            }
+          
+            img:hover {
+                transform: scale(1.05);
+                box-shadow: 3px 5px 13px -4px rgba(0,0,0,0.75);
             }
 
             .fadeIn {
